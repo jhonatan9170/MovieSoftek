@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		034C63AB2B005AF5004304D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034C63AA2B005AF5004304D9 /* AppDelegate.swift */; };
 		034C63AD2B005AF5004304D9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034C63AC2B005AF5004304D9 /* SceneDelegate.swift */; };
-		034C63AF2B005AF5004304D9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034C63AE2B005AF5004304D9 /* ViewController.swift */; };
+		034C63AF2B005AF5004304D9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034C63AE2B005AF5004304D9 /* LoginViewController.swift */; };
 		034C63B22B005AF5004304D9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 034C63B02B005AF5004304D9 /* Main.storyboard */; };
 		034C63B52B005AF5004304D9 /* MovieSoftek.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 034C63B32B005AF5004304D9 /* MovieSoftek.xcdatamodeld */; };
 		034C63B72B005AF7004304D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 034C63B62B005AF7004304D9 /* Assets.xcassets */; };
@@ -33,7 +33,7 @@
 		034C63A72B005AF5004304D9 /* MovieSoftek.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieSoftek.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		034C63AA2B005AF5004304D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		034C63AC2B005AF5004304D9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		034C63AE2B005AF5004304D9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		034C63AE2B005AF5004304D9 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		034C63B12B005AF5004304D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		034C63B42B005AF5004304D9 /* MovieSoftek.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MovieSoftek.xcdatamodel; sourceTree = "<group>"; };
 		034C63B62B005AF7004304D9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -97,7 +97,7 @@
 			children = (
 				034C63AA2B005AF5004304D9 /* AppDelegate.swift */,
 				034C63AC2B005AF5004304D9 /* SceneDelegate.swift */,
-				034C63AE2B005AF5004304D9 /* ViewController.swift */,
+				034C63AE2B005AF5004304D9 /* LoginViewController.swift */,
 				034C63B02B005AF5004304D9 /* Main.storyboard */,
 				034C63B62B005AF7004304D9 /* Assets.xcassets */,
 				034C63B82B005AF7004304D9 /* LaunchScreen.storyboard */,
@@ -132,7 +132,6 @@
 				184C9C67640ECBC552099BA4 /* Pods-MovieSoftekTests.debug.xcconfig */,
 				2102463C054E8653677A80F8 /* Pods-MovieSoftekTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -314,7 +313,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				034C63B52B005AF5004304D9 /* MovieSoftek.xcdatamodeld in Sources */,
-				034C63AF2B005AF5004304D9 /* ViewController.swift in Sources */,
+				034C63AF2B005AF5004304D9 /* LoginViewController.swift in Sources */,
 				034C63AB2B005AF5004304D9 /* AppDelegate.swift in Sources */,
 				034C63AD2B005AF5004304D9 /* SceneDelegate.swift in Sources */,
 			);
@@ -395,7 +394,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -458,7 +457,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
