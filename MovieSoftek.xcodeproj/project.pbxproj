@@ -19,6 +19,7 @@
 		03D2F3C82B007ED900160628 /* MovieCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03D2F3C62B007ED900160628 /* MovieCellTableViewCell.xib */; };
 		03D2F3CA2B00806800160628 /* MovieHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D2F3C92B00806800160628 /* MovieHomeViewController.swift */; };
 		03D2F3CC2B0082C800160628 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D2F3CB2B0082C800160628 /* Extensions.swift */; };
+		03D2F3CE2B00864100160628 /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D2F3CD2B00864100160628 /* MovieDetailViewController.swift */; };
 		22A13B618DC6D7BDBFB0A6BF /* Pods_MovieSoftekTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF098D79E11FD72BD1F5B4FC /* Pods_MovieSoftekTests.framework */; };
 		E4BAA44B538A050562A3CEAC /* Pods_MovieSoftek.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23C528F6E00D59A4430DE28D /* Pods_MovieSoftek.framework */; };
 /* End PBXBuildFile section */
@@ -51,6 +52,7 @@
 		03D2F3C62B007ED900160628 /* MovieCellTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieCellTableViewCell.xib; sourceTree = "<group>"; };
 		03D2F3C92B00806800160628 /* MovieHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieHomeViewController.swift; sourceTree = "<group>"; };
 		03D2F3CB2B0082C800160628 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		03D2F3CD2B00864100160628 /* MovieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
 		184C9C67640ECBC552099BA4 /* Pods-MovieSoftekTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieSoftekTests.debug.xcconfig"; path = "Target Support Files/Pods-MovieSoftekTests/Pods-MovieSoftekTests.debug.xcconfig"; sourceTree = "<group>"; };
 		2102463C054E8653677A80F8 /* Pods-MovieSoftekTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieSoftekTests.release.xcconfig"; path = "Target Support Files/Pods-MovieSoftekTests/Pods-MovieSoftekTests.release.xcconfig"; sourceTree = "<group>"; };
 		23C528F6E00D59A4430DE28D /* Pods_MovieSoftek.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MovieSoftek.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -115,6 +117,7 @@
 				03D2F3C62B007ED900160628 /* MovieCellTableViewCell.xib */,
 				03D2F3C92B00806800160628 /* MovieHomeViewController.swift */,
 				03D2F3CB2B0082C800160628 /* Extensions.swift */,
+				03D2F3CD2B00864100160628 /* MovieDetailViewController.swift */,
 			);
 			path = MovieSoftek;
 			sourceTree = "<group>";
@@ -329,6 +332,7 @@
 				034C63B52B005AF5004304D9 /* MovieSoftek.xcdatamodeld in Sources */,
 				034C63AF2B005AF5004304D9 /* LoginViewController.swift in Sources */,
 				034C63AB2B005AF5004304D9 /* AppDelegate.swift in Sources */,
+				03D2F3CE2B00864100160628 /* MovieDetailViewController.swift in Sources */,
 				03D2F3C72B007ED900160628 /* MovieCellTableViewCell.swift in Sources */,
 				034C63AD2B005AF5004304D9 /* SceneDelegate.swift in Sources */,
 				03D2F3CC2B0082C800160628 /* Extensions.swift in Sources */,
