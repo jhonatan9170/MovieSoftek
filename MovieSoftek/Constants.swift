@@ -19,4 +19,10 @@ class Constants {
     static let getMoviesByPageURL = baseURL + "/upcoming?page="
     
     static let authorizacionKey = "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjNTllZTZiMmU0NDIwZDNjZmNhOTYwZThlMGM1ZWFlZiIsInN1YiI6IjY1NGZlMjczZWE4NGM3MDEzOWEwYzVmYyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.hHDNjH6Twx2qQwiLZznmvdAZLIYaXArQTwnxyQjCIkA"
+    
+    
+    //keys
+    
+    static let keepLoginKey = "keepLoginKey"
+    
 }

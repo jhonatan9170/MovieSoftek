@@ -9,10 +9,24 @@
 /* Begin PBXBuildFile section */
 		0330117A2B01CF7E0032A746 /* APIClientTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033011792B01CF7E0032A746 /* APIClientTest.swift */; };
 		0330117C2B01CFB10032A746 /* MovieServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0330117B2B01CFB10032A746 /* MovieServiceTest.swift */; };
+		033011802B01D1200032A746 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0330117F2B01D1200032A746 /* LoginService.swift */; };
+		033011822B01D4840032A746 /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033011812B01D4840032A746 /* LoginInteractor.swift */; };
+		033011842B01D5000032A746 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033011832B01D5000032A746 /* LoginPresenter.swift */; };
+		033011862B01E3DD0032A746 /* LoginProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033011852B01E3DD0032A746 /* LoginProtocols.swift */; };
+		033011882B01E4B20032A746 /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033011872B01E4B20032A746 /* LoginRouter.swift */; };
+		0330118A2B0202140032A746 /* LoginInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033011892B0202140032A746 /* LoginInteractorTests.swift */; };
+		0330118D2B0202630032A746 /* MockAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0330118C2B0202630032A746 /* MockAPIClient.swift */; };
+		0330118F2B0202E00032A746 /* MockURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0330118E2B0202E00032A746 /* MockURLSession.swift */; };
+		033011922B0203A80032A746 /* MockLoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033011912B0203A80032A746 /* MockLoginService.swift */; };
+		033011942B0204490032A746 /* MockLoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033011932B0204490032A746 /* MockLoginPresenter.swift */; };
+		033011962B02056E0032A746 /* LoginPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033011952B02056E0032A746 /* LoginPresenterTests.swift */; };
+		033011982B0205BD0032A746 /* MockLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033011972B0205BD0032A746 /* MockLoginView.swift */; };
+		0330119A2B02060E0032A746 /* MockLoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033011992B02060E0032A746 /* MockLoginInteractor.swift */; };
+		0330119C2B02067C0032A746 /* MockLoginRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0330119B2B02067C0032A746 /* MockLoginRoute.swift */; };
 		034C63AB2B005AF5004304D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034C63AA2B005AF5004304D9 /* AppDelegate.swift */; };
 		034C63AD2B005AF5004304D9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034C63AC2B005AF5004304D9 /* SceneDelegate.swift */; };
 		034C63AF2B005AF5004304D9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034C63AE2B005AF5004304D9 /* LoginViewController.swift */; };
-		034C63B22B005AF5004304D9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 034C63B02B005AF5004304D9 /* Main.storyboard */; };
+		034C63B22B005AF5004304D9 /* MoviesStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 034C63B02B005AF5004304D9 /* MoviesStoryboard.storyboard */; };
 		034C63B52B005AF5004304D9 /* MovieSoftek.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 034C63B32B005AF5004304D9 /* MovieSoftek.xcdatamodeld */; };
 		034C63B72B005AF7004304D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 034C63B62B005AF7004304D9 /* Assets.xcassets */; };
 		034C63BA2B005AF7004304D9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 034C63B82B005AF7004304D9 /* LaunchScreen.storyboard */; };
@@ -44,11 +58,25 @@
 /* Begin PBXFileReference section */
 		033011792B01CF7E0032A746 /* APIClientTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClientTest.swift; sourceTree = "<group>"; };
 		0330117B2B01CFB10032A746 /* MovieServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieServiceTest.swift; sourceTree = "<group>"; };
+		0330117F2B01D1200032A746 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
+		033011812B01D4840032A746 /* LoginInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractor.swift; sourceTree = "<group>"; };
+		033011832B01D5000032A746 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
+		033011852B01E3DD0032A746 /* LoginProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginProtocols.swift; sourceTree = "<group>"; };
+		033011872B01E4B20032A746 /* LoginRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
+		033011892B0202140032A746 /* LoginInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractorTests.swift; sourceTree = "<group>"; };
+		0330118C2B0202630032A746 /* MockAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAPIClient.swift; sourceTree = "<group>"; };
+		0330118E2B0202E00032A746 /* MockURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLSession.swift; sourceTree = "<group>"; };
+		033011912B0203A80032A746 /* MockLoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLoginService.swift; sourceTree = "<group>"; };
+		033011932B0204490032A746 /* MockLoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLoginPresenter.swift; sourceTree = "<group>"; };
+		033011952B02056E0032A746 /* LoginPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenterTests.swift; sourceTree = "<group>"; };
+		033011972B0205BD0032A746 /* MockLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLoginView.swift; sourceTree = "<group>"; };
+		033011992B02060E0032A746 /* MockLoginInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLoginInteractor.swift; sourceTree = "<group>"; };
+		0330119B2B02067C0032A746 /* MockLoginRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLoginRoute.swift; sourceTree = "<group>"; };
 		034C63A72B005AF5004304D9 /* MovieSoftek.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieSoftek.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		034C63AA2B005AF5004304D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		034C63AC2B005AF5004304D9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		034C63AE2B005AF5004304D9 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		034C63B12B005AF5004304D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		034C63B12B005AF5004304D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MoviesStoryboard.storyboard; sourceTree = "<group>"; };
 		034C63B42B005AF5004304D9 /* MovieSoftek.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MovieSoftek.xcdatamodel; sourceTree = "<group>"; };
 		034C63B62B005AF7004304D9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		034C63B92B005AF7004304D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -91,6 +119,54 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0330117D2B01D0B50032A746 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				03AA33232B00952200337AA6 /* APIClient.swift */,
+				03AA33212B00950200337AA6 /* MovieListResponse.swift */,
+				03AA331D2B0094D300337AA6 /* MoviesService.swift */,
+				0330117F2B01D1200032A746 /* LoginService.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		0330117E2B01D0EA0032A746 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				034C63AE2B005AF5004304D9 /* LoginViewController.swift */,
+				033011812B01D4840032A746 /* LoginInteractor.swift */,
+				033011832B01D5000032A746 /* LoginPresenter.swift */,
+				033011872B01E4B20032A746 /* LoginRouter.swift */,
+				033011852B01E3DD0032A746 /* LoginProtocols.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		0330118B2B0202320032A746 /* NetworkTests */ = {
+			isa = PBXGroup;
+			children = (
+				033011792B01CF7E0032A746 /* APIClientTest.swift */,
+				0330117B2B01CFB10032A746 /* MovieServiceTest.swift */,
+				0330118C2B0202630032A746 /* MockAPIClient.swift */,
+				0330118E2B0202E00032A746 /* MockURLSession.swift */,
+				033011912B0203A80032A746 /* MockLoginService.swift */,
+			);
+			path = NetworkTests;
+			sourceTree = "<group>";
+		};
+		033011902B02032F0032A746 /* LoginTests */ = {
+			isa = PBXGroup;
+			children = (
+				033011972B0205BD0032A746 /* MockLoginView.swift */,
+				033011932B0204490032A746 /* MockLoginPresenter.swift */,
+				033011992B02060E0032A746 /* MockLoginInteractor.swift */,
+				0330119B2B02067C0032A746 /* MockLoginRoute.swift */,
+				033011892B0202140032A746 /* LoginInteractorTests.swift */,
+				033011952B02056E0032A746 /* LoginPresenterTests.swift */,
+			);
+			path = LoginTests;
+			sourceTree = "<group>";
+		};
 		034C639E2B005AF5004304D9 = {
 			isa = PBXGroup;
 			children = (
@@ -115,11 +191,11 @@
 		034C63A92B005AF5004304D9 /* MovieSoftek */ = {
 			isa = PBXGroup;
 			children = (
+				0330117D2B01D0B50032A746 /* Network */,
+				0330117E2B01D0EA0032A746 /* Login */,
 				034C63AA2B005AF5004304D9 /* AppDelegate.swift */,
-				03AA33232B00952200337AA6 /* APIClient.swift */,
 				034C63AC2B005AF5004304D9 /* SceneDelegate.swift */,
-				034C63AE2B005AF5004304D9 /* LoginViewController.swift */,
-				034C63B02B005AF5004304D9 /* Main.storyboard */,
+				034C63B02B005AF5004304D9 /* MoviesStoryboard.storyboard */,
 				034C63B62B005AF7004304D9 /* Assets.xcassets */,
 				034C63B82B005AF7004304D9 /* LaunchScreen.storyboard */,
 				034C63BB2B005AF7004304D9 /* Info.plist */,
@@ -128,8 +204,6 @@
 				03D2F3C62B007ED900160628 /* MovieCellTableViewCell.xib */,
 				03D2F3C92B00806800160628 /* MovieHomeViewController.swift */,
 				03AA331F2B0094EE00337AA6 /* Constants.swift */,
-				03AA33212B00950200337AA6 /* MovieListResponse.swift */,
-				03AA331D2B0094D300337AA6 /* MoviesService.swift */,
 				03D2F3CB2B0082C800160628 /* Extensions.swift */,
 				03D2F3CD2B00864100160628 /* MovieDetailViewController.swift */,
 			);
@@ -139,8 +213,8 @@
 		034C63C32B005AF7004304D9 /* MovieSoftekTests */ = {
 			isa = PBXGroup;
 			children = (
-				033011792B01CF7E0032A746 /* APIClientTest.swift */,
-				0330117B2B01CFB10032A746 /* MovieServiceTest.swift */,
+				0330118B2B0202320032A746 /* NetworkTests */,
+				033011902B02032F0032A746 /* LoginTests */,
 			);
 			path = MovieSoftekTests;
 			sourceTree = "<group>";
@@ -260,7 +334,7 @@
 				034C63BA2B005AF7004304D9 /* LaunchScreen.storyboard in Resources */,
 				034C63B72B005AF7004304D9 /* Assets.xcassets in Resources */,
 				03D2F3C82B007ED900160628 /* MovieCellTableViewCell.xib in Resources */,
-				034C63B22B005AF5004304D9 /* Main.storyboard in Resources */,
+				034C63B22B005AF5004304D9 /* MoviesStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,6 +416,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				033011842B01D5000032A746 /* LoginPresenter.swift in Sources */,
 				03D2F3CA2B00806800160628 /* MovieHomeViewController.swift in Sources */,
 				03AA33222B00950200337AA6 /* MovieListResponse.swift in Sources */,
 				03AA33202B0094EE00337AA6 /* Constants.swift in Sources */,
@@ -349,12 +424,16 @@
 				034C63AF2B005AF5004304D9 /* LoginViewController.swift in Sources */,
 				034C63AB2B005AF5004304D9 /* AppDelegate.swift in Sources */,
 				03D2F3CE2B00864100160628 /* MovieDetailViewController.swift in Sources */,
+				033011862B01E3DD0032A746 /* LoginProtocols.swift in Sources */,
 				03D2F3C72B007ED900160628 /* MovieCellTableViewCell.swift in Sources */,
+				033011822B01D4840032A746 /* LoginInteractor.swift in Sources */,
 				03AA331E2B0094D300337AA6 /* MoviesService.swift in Sources */,
 				03AA33242B00952200337AA6 /* APIClient.swift in Sources */,
 				034C63AD2B005AF5004304D9 /* SceneDelegate.swift in Sources */,
+				033011882B01E4B20032A746 /* LoginRouter.swift in Sources */,
 				03D2F3CC2B0082C800160628 /* Extensions.swift in Sources */,
 				03D2F3D02B008D4900160628 /* (null) in Sources */,
+				033011802B01D1200032A746 /* LoginService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -362,9 +441,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				033011922B0203A80032A746 /* MockLoginService.swift in Sources */,
+				033011962B02056E0032A746 /* LoginPresenterTests.swift in Sources */,
+				0330118F2B0202E00032A746 /* MockURLSession.swift in Sources */,
 				03D2F3D82B0093EA00160628 /* (null) in Sources */,
+				033011982B0205BD0032A746 /* MockLoginView.swift in Sources */,
+				0330119C2B02067C0032A746 /* MockLoginRoute.swift in Sources */,
+				0330119A2B02060E0032A746 /* MockLoginInteractor.swift in Sources */,
 				0330117C2B01CFB10032A746 /* MovieServiceTest.swift in Sources */,
 				0330117A2B01CF7E0032A746 /* APIClientTest.swift in Sources */,
+				0330118A2B0202140032A746 /* LoginInteractorTests.swift in Sources */,
+				033011942B0204490032A746 /* MockLoginPresenter.swift in Sources */,
+				0330118D2B0202630032A746 /* MockAPIClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -379,12 +467,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		034C63B02B005AF5004304D9 /* Main.storyboard */ = {
+		034C63B02B005AF5004304D9 /* MoviesStoryboard.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				034C63B12B005AF5004304D9 /* Base */,
 			);
-			name = Main.storyboard;
+			name = MoviesStoryboard.storyboard;
 			sourceTree = "<group>";
 		};
 		034C63B82B005AF7004304D9 /* LaunchScreen.storyboard */ = {
@@ -530,7 +618,6 @@
 				INFOPLIST_FILE = MovieSoftek/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -559,7 +646,6 @@
 				INFOPLIST_FILE = MovieSoftek/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

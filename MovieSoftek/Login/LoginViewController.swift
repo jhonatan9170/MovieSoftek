@@ -11,6 +11,8 @@ import SimpleCheckbox
 
 class LoginViewController: UIViewController {
     
+    var presenter: LoginPresenterProtocol?
+    
     @IBOutlet weak var emailTextField: MDCOutlinedTextField!
     @IBOutlet weak var passWordTextField: MDCOutlinedTextField!
     @IBOutlet weak var rememberCheckBox: Checkbox!
@@ -53,6 +55,17 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func ingresarBtnTapped(_ sender: UIButton) {
+        guard let username = emailTextField.text, let password = passWordTextField.text else { return }
+        presenter?.login(username: username, password: password,keepLogin: rememberCheckBox.isChecked)
+    }
+}
 
+extension LoginViewController:LoginViewProtocol {
+
+    func updateLoading(isLoading: Bool) {
+        DispatchQueue.main.async { [weak self] in
+            isLoading ? self?.view.addSpinner() : self?.view.removeSpinner()
+        }
+       
     }
 }
