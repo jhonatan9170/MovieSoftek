@@ -9,6 +9,12 @@ import Foundation
 @testable import MovieSoftek
 
 class MockLoginPresenter: LoginOutputInteractorProtocol {
+    
+    var movies = [MovieEntity]()
+    var page = 1
+    var totalPages:Int?
+    var isFromStorage = false
+    
     var loginSuccessCalled = false
     var loginFailedCalled = false
     var errorMessage: String?

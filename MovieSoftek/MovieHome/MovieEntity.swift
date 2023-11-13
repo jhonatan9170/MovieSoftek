@@ -17,17 +17,5 @@ struct MovieEntity {
 
 }
 
-extension MovieEntity{
-
-    func toMovieData()->MovieData {
-        let movieData = MovieData()
-        movieData.id = Int64( self.id)
-        movieData.title =  self.title
-        movieData.overview = self.overview
-        movieData.releaseDate =  self.releaseDate
-        return movieData
-    }
-}
-
 extension MovieEntity:Equatable{
 }

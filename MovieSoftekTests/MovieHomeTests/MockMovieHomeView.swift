@@ -9,15 +9,15 @@ import Foundation
 @testable import MovieSoftek
 
 class MockMovieHomeView: MovieHomeViewProtocol {
+
     var isLoadingUpdated = false
-    var moviesShown: [MovieEntity]?
-    var errorShown: String?
+    var moviesShown: [MovieEntity] = []
 
     func updateLoading(isLoading: Bool) {
         isLoadingUpdated = isLoading
     }
 
     func showMovies(with movies: [MovieEntity]) {
-        moviesShown = movies
+        moviesShown.append(contentsOf: movies)
     }
 }

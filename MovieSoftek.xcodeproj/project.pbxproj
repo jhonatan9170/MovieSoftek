@@ -26,7 +26,6 @@
 		033011A12B0208900032A746 /* MovieHomeProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033011A02B0208900032A746 /* MovieHomeProtocols.swift */; };
 		033011A32B0209120032A746 /* MovieEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033011A22B0209120032A746 /* MovieEntity.swift */; };
 		033011A72B020CE00032A746 /* MovieHomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033011A62B020CE00032A746 /* MovieHomeRouter.swift */; };
-		033011A92B0211210032A746 /* MovieHomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033011A82B0211210032A746 /* MovieHomePresenter.swift */; };
 		033011AB2B0214420032A746 /* MovieHomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033011AA2B0214420032A746 /* MovieHomeInteractor.swift */; };
 		033011AD2B0220E70032A746 /* CoreDataMananger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033011AC2B0220E60032A746 /* CoreDataMananger.swift */; };
 		033011B02B026CDC0032A746 /* MockMovieHomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033011AF2B026CDC0032A746 /* MockMovieHomePresenter.swift */; };
@@ -41,6 +40,8 @@
 		033011C32B0279D40032A746 /* MovieDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033011C22B0279D40032A746 /* MovieDetailPresenter.swift */; };
 		033011C82B0282070032A746 /* MockMovieDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033011C72B0282070032A746 /* MockMovieDetailView.swift */; };
 		033011CA2B0282310032A746 /* MovieDetailPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033011C92B0282310032A746 /* MovieDetailPresenterTests.swift */; };
+		033011CC2B0294740032A746 /* MovieHomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033011CB2B0294740032A746 /* MovieHomePresenter.swift */; };
+		033011CE2B0297260032A746 /* MockCoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033011CD2B0297260032A746 /* MockCoreDataManager.swift */; };
 		034C63AB2B005AF5004304D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034C63AA2B005AF5004304D9 /* AppDelegate.swift */; };
 		034C63AD2B005AF5004304D9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034C63AC2B005AF5004304D9 /* SceneDelegate.swift */; };
 		034C63AF2B005AF5004304D9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034C63AE2B005AF5004304D9 /* LoginViewController.swift */; };
@@ -93,7 +94,6 @@
 		033011A02B0208900032A746 /* MovieHomeProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieHomeProtocols.swift; sourceTree = "<group>"; };
 		033011A22B0209120032A746 /* MovieEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieEntity.swift; sourceTree = "<group>"; };
 		033011A62B020CE00032A746 /* MovieHomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieHomeRouter.swift; sourceTree = "<group>"; };
-		033011A82B0211210032A746 /* MovieHomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieHomePresenter.swift; sourceTree = "<group>"; };
 		033011AA2B0214420032A746 /* MovieHomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieHomeInteractor.swift; sourceTree = "<group>"; };
 		033011AC2B0220E60032A746 /* CoreDataMananger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataMananger.swift; sourceTree = "<group>"; };
 		033011AF2B026CDC0032A746 /* MockMovieHomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockMovieHomePresenter.swift; sourceTree = "<group>"; };
@@ -108,6 +108,8 @@
 		033011C22B0279D40032A746 /* MovieDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailPresenter.swift; sourceTree = "<group>"; };
 		033011C72B0282070032A746 /* MockMovieDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockMovieDetailView.swift; sourceTree = "<group>"; };
 		033011C92B0282310032A746 /* MovieDetailPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailPresenterTests.swift; sourceTree = "<group>"; };
+		033011CB2B0294740032A746 /* MovieHomePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieHomePresenter.swift; sourceTree = "<group>"; };
+		033011CD2B0297260032A746 /* MockCoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCoreDataManager.swift; sourceTree = "<group>"; };
 		034C63A72B005AF5004304D9 /* MovieSoftek.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieSoftek.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		034C63AA2B005AF5004304D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		034C63AC2B005AF5004304D9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -211,8 +213,8 @@
 				033011A22B0209120032A746 /* MovieEntity.swift */,
 				03D2F3C92B00806800160628 /* MovieHomeViewController.swift */,
 				033011A62B020CE00032A746 /* MovieHomeRouter.swift */,
-				033011A82B0211210032A746 /* MovieHomePresenter.swift */,
 				033011AA2B0214420032A746 /* MovieHomeInteractor.swift */,
+				033011CB2B0294740032A746 /* MovieHomePresenter.swift */,
 				033011A02B0208900032A746 /* MovieHomeProtocols.swift */,
 			);
 			path = MovieHome;
@@ -227,9 +229,10 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
-		033011AE2B026CA10032A746 /* MovieHomTests */ = {
+		033011AE2B026CA10032A746 /* MovieHomeTests */ = {
 			isa = PBXGroup;
 			children = (
+				033011CD2B0297260032A746 /* MockCoreDataManager.swift */,
 				033011AF2B026CDC0032A746 /* MockMovieHomePresenter.swift */,
 				033011B12B026CEF0032A746 /* MockMovieHomeInteractor.swift */,
 				033011B72B026DEF0032A746 /* MockMovieHomeRouter.swift */,
@@ -237,7 +240,7 @@
 				033011B52B026DAC0032A746 /* MovieHomeInteractorTests.swift */,
 				033011BB2B026E570032A746 /* MovieHomePresenterTests.swift */,
 			);
-			path = MovieHomTests;
+			path = MovieHomeTests;
 			sourceTree = "<group>";
 		};
 		033011BD2B0276380032A746 /* MovieDetail */ = {
@@ -284,10 +287,10 @@
 		034C63A92B005AF5004304D9 /* MovieSoftek */ = {
 			isa = PBXGroup;
 			children = (
-				033011BD2B0276380032A746 /* MovieDetail */,
-				0330119F2B0208610032A746 /* MovieHome */,
 				0330117D2B01D0B50032A746 /* Network */,
 				0330117E2B01D0EA0032A746 /* Login */,
+				0330119F2B0208610032A746 /* MovieHome */,
+				033011BD2B0276380032A746 /* MovieDetail */,
 				034C63AA2B005AF5004304D9 /* AppDelegate.swift */,
 				034C63AC2B005AF5004304D9 /* SceneDelegate.swift */,
 				034C63B02B005AF5004304D9 /* MoviesStoryboard.storyboard */,
@@ -306,7 +309,7 @@
 			isa = PBXGroup;
 			children = (
 				033011C62B0281E40032A746 /* MovieDetailTests */,
-				033011AE2B026CA10032A746 /* MovieHomTests */,
+				033011AE2B026CA10032A746 /* MovieHomeTests */,
 				0330118B2B0202320032A746 /* NetworkTests */,
 				033011902B02032F0032A746 /* LoginTests */,
 			);
@@ -516,7 +519,6 @@
 				03AA33222B00950200337AA6 /* MovieListResponse.swift in Sources */,
 				03AA33202B0094EE00337AA6 /* Constants.swift in Sources */,
 				034C63B52B005AF5004304D9 /* MovieSoftek.xcdatamodeld in Sources */,
-				033011A92B0211210032A746 /* MovieHomePresenter.swift in Sources */,
 				034C63AF2B005AF5004304D9 /* LoginViewController.swift in Sources */,
 				034C63AB2B005AF5004304D9 /* AppDelegate.swift in Sources */,
 				03D2F3CE2B00864100160628 /* MovieDetailViewController.swift in Sources */,
@@ -533,6 +535,7 @@
 				033011A72B020CE00032A746 /* MovieHomeRouter.swift in Sources */,
 				03AA33242B00952200337AA6 /* APIClient.swift in Sources */,
 				034C63AD2B005AF5004304D9 /* SceneDelegate.swift in Sources */,
+				033011CC2B0294740032A746 /* MovieHomePresenter.swift in Sources */,
 				033011882B01E4B20032A746 /* LoginRouter.swift in Sources */,
 				03D2F3CC2B0082C800160628 /* Extensions.swift in Sources */,
 				03D2F3D02B008D4900160628 /* (null) in Sources */,
@@ -556,6 +559,7 @@
 				0330119A2B02060E0032A746 /* MockLoginInteractor.swift in Sources */,
 				0330117C2B01CFB10032A746 /* MovieServiceTest.swift in Sources */,
 				033011B22B026CEF0032A746 /* MockMovieHomeInteractor.swift in Sources */,
+				033011CE2B0297260032A746 /* MockCoreDataManager.swift in Sources */,
 				0330117A2B01CF7E0032A746 /* APIClientTest.swift in Sources */,
 				033011B42B026D140032A746 /* MockMoviesService.swift in Sources */,
 				0330118A2B0202140032A746 /* LoginInteractorTests.swift in Sources */,

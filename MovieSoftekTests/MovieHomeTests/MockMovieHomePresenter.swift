@@ -11,17 +11,21 @@ import Foundation
 class MockMovieHomePresenter: MovieHomeOutputInteractorProtocol {
 
     var moviesListDidFetchCalled = false
+    var moviesListDidFetchFromStorageCalled = false
     var moviesListFailedCalled = false
-    var moviesResponse: MovieListResponse?
     var error: String?
 
-    func MoviestListDidFetch(moviesResponse: MovieListResponse) {
+    func moviestListDidFetch(moviesResponse: MovieListResponse) {
         moviesListDidFetchCalled = true
-        self.moviesResponse = moviesResponse
     }
 
-    func MoviesListFailed(error: String) {
+    func moviestListDidFetchFromStorage(movies: [MovieEntity]) {
+        moviesListDidFetchFromStorageCalled = true
+    }
+
+    func moviesListFailed(error: String) {
         moviesListFailedCalled = true
         self.error = error
     }
 }
+

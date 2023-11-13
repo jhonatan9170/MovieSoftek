@@ -12,9 +12,11 @@ class MockMovieHomeRouter: MovieHomeRouterProtocol {
     var viewController: UIViewController?
     
     var movieDetailEntity: MovieEntity?
+    var movieDetailNavigationCalled = false
     var errorShown: String?
     
     func goMovieDetail(with movie: MovieEntity) {
+        movieDetailNavigationCalled = true
         self.movieDetailEntity = movie
     }
     

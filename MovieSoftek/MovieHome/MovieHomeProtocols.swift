@@ -25,11 +25,13 @@ protocol MovieHomePresenterProtocol: AnyObject {
 protocol MovieHomeInputInteractorProtocol: AnyObject {
     var presenter: MovieHomeOutputInteractorProtocol? {get set}
     func getMovieList(page:Int)
+    func saveDataToStorage(movies: [MovieEntity])
 }
 
 protocol MovieHomeOutputInteractorProtocol: AnyObject {
-    func MoviestListDidFetch(moviesResponse: MovieListResponse)
-    func MoviesListFailed(error:String)
+    func moviestListDidFetch(moviesResponse: MovieListResponse)
+    func moviestListDidFetchFromStorage(movies: [MovieEntity])
+    func moviesListFailed(error:String)
 }
 
 protocol MovieHomeRouterProtocol: AnyObject {

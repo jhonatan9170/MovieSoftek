@@ -9,11 +9,18 @@ import Foundation
 @testable import MovieSoftek
 
 class MockMovieHomeInteractor: MovieHomeInputInteractorProtocol {
+    
     var presenter: MovieHomeOutputInteractorProtocol?
     
-    var isMovieListRequested = false
+    var getMovieListCalled = false
+    var saveDataToStorageCalled = false
 
     func getMovieList(page: Int) {
-        isMovieListRequested = true
+        getMovieListCalled = true
     }
+
+    func saveDataToStorage(movies: [MovieEntity]) {
+        saveDataToStorageCalled = true
+    }
+    
 }
