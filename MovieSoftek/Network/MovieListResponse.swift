@@ -19,9 +19,6 @@ struct MovieListResponse: Codable {
     }
 }
 
-// MARK: - Dates
-
-
 // MARK: - Result
 struct MovieResponse: Codable {
     let id: Int

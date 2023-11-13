@@ -37,7 +37,7 @@ final class MovieHomePresenterTests: XCTestCase {
     }
 
     func testShowMovieSelection() {
-        let movie = MovieEntity(id: 1, title: "Test Movie", releaseDate: "", overview: "")
+        let movie = MovieEntity(id: 1, title: "Test Movie", rating: "8/10", releaseDate: "", overview: "")
         presenter.showMovieSelection(with: movie)
         XCTAssertEqual(mockRouter.movieDetailEntity, movie)
     }

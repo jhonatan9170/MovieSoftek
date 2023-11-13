@@ -129,9 +129,27 @@ extension UIViewController {
 extension MovieResponse {
     func toMovieEntity() -> MovieEntity {
         return MovieEntity(id: self.id
-                           , title: self.title
+                           , title: self.title,
+                           rating: String(self.voteAverage)+"/10"
                            , posterURL: URL(string: Constants.baseImageURL200 + self.posterPath),
-                           releaseDate: self.releaseDate,
+                           releaseDate: self.releaseDate.toLegibleDate(inputFormat: "yyyy-MM-dd") ?? self.releaseDate,
                            overview: self.overview)
+    }
+}
+
+extension String {
+    func toLegibleDate(inputFormat:String) -> String? {
+        let inputFormatter = DateFormatter()
+        inputFormatter.dateFormat = inputFormat
+
+        guard let date = inputFormatter.date(from: self) else {
+            return nil
+        }
+
+        let outputFormatter = DateFormatter()
+        outputFormatter.dateStyle = .long
+        outputFormatter.timeStyle = .none
+
+        return outputFormatter.string(from: date)
     }
 }

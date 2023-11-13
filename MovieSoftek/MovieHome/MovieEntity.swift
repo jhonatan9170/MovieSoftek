@@ -10,12 +10,14 @@ import Foundation
 struct MovieEntity {
     let id: Int
     let title: String
+    let rating: String
     var posterURL: URL?
     let releaseDate: String
     let overview: String
+
 }
 
-extension MovieEntity {
+extension MovieEntity{
 
     func toMovieData()->MovieData {
         let movieData = MovieData()

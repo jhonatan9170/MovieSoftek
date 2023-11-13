@@ -19,7 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let keepLogin = UserDefaults.standard.bool(forKey: Constants.keepLoginKey)
         
         window.rootViewController = keepLogin ? LoginRouter.createLoginModule() : MovieHomeRouter.createMovieHomeModule()
- 
+        setNavBar()
         window.makeKeyAndVisible()
         
         self.window = window
@@ -57,6 +57,25 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Save changes in the application's managed object context when the application transitions to the background.
     }
 
-
+    func setNavBar(){
+        let navigationBarAppearance = UINavigationBarAppearance()
+        navigationBarAppearance.configureWithOpaqueBackground()
+        navigationBarAppearance.titleTextAttributes = [
+            NSAttributedString.Key.foregroundColor : UIColor.white,
+            NSAttributedString.Key.font: UIFont(name: "HelveticaNeue-Bold", size: 16) ?? UIFont.boldSystemFont(ofSize: 16)
+        ]
+        navigationBarAppearance.backgroundColor = UIColor(named: "colorNavBar")
+        UINavigationBar.appearance().standardAppearance = navigationBarAppearance
+        UINavigationBar.appearance().compactAppearance = navigationBarAppearance
+        UINavigationBar.appearance().scrollEdgeAppearance = navigationBarAppearance
+        
+        let tabBarAppearance = UITabBarAppearance()
+        tabBarAppearance.configureWithOpaqueBackground()
+        tabBarAppearance.backgroundColor = UIColor(named: "colorNavBar")
+        if #available(iOS 15.0, *) {
+            UITabBar.appearance().scrollEdgeAppearance = tabBarAppearance
+        } 
+        UITabBar.appearance().standardAppearance = tabBarAppearance
+    }
 }
 

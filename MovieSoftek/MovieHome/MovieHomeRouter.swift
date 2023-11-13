@@ -34,7 +34,8 @@ class MovieHomeRouter: MovieHomeRouterProtocol{
     }
     
     func goMovieDetail(with movie: MovieEntity) {
-        
+        let vc = MovieDetailRouter.createMovieDetailModule(with: movie)
+        viewController?.navigationController?.pushViewController(vc, animated: true)
     }
     
     func showError(error: String) {
