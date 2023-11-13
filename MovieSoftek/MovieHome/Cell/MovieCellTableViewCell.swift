@@ -18,10 +18,9 @@ class MovieCellTableViewCell: UITableViewCell {
         super.awakeFromNib()
     }
     
-    func configure(title: String, url:String){
-        titleLabel.text = title
-        let url = URL(string: url)
-        movieUIImage.kf.setImage(with: url,placeholder: UIImage(named: "imagePlaceholder"))
+    func configure(movie: MovieEntity){
+        titleLabel.text = movie.title
+        movieUIImage.kf.setImage(with: movie.posterURL,placeholder: UIImage(named: "imagePlaceholder"))
     }
     
 }

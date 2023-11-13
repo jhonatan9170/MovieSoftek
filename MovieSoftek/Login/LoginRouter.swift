@@ -33,13 +33,8 @@ class LoginRouter: LoginRouterProtocol {
     
     func presentMovieHome() {
         DispatchQueue.main.async {
-            let storyboard = UIStoryboard(name: "MoviesStoryboard", bundle: nil)
-            guard let vc = storyboard.instantiateViewController(withIdentifier: "MovieHomeViewController") as? MovieHomeViewController else  {
-                return
-            }
-            let navigationController = UINavigationController(rootViewController: vc)
             if let window = UIApplication.shared.windows.first {
-                window.rootViewController = navigationController
+                window.rootViewController = MovieHomeRouter.createMovieHomeModule()
                 window.makeKeyAndVisible()
                 UIView.transition(with: window, duration: 0.3, options: .transitionCrossDissolve, animations: nil, completion: nil)
             }

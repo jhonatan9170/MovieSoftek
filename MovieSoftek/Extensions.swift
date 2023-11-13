@@ -125,3 +125,13 @@ extension UIViewController {
         present(alert, animated: true)
     }
 }
+
+extension MovieResponse {
+    func toMovieEntity() -> MovieEntity {
+        return MovieEntity(id: self.id
+                           , title: self.title
+                           , posterURL: URL(string: Constants.baseImageURL200 + self.posterPath),
+                           releaseDate: self.releaseDate,
+                           overview: self.overview)
+    }
+}

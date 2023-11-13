@@ -26,7 +26,7 @@ class LoginViewController: UIViewController {
     
     func setTextFields() {
         emailTextField.label.font = UIFont(name: "helvetica neue", size: 16.0)
-        emailTextField.label.text = "Correo electrónico"
+        emailTextField.label.text = "User"
         emailTextField.setOutlineColor(UIColor(white: 0.1, alpha: 0.5), for: .editing)
         emailTextField.setOutlineColor(UIColor(white: 0.1, alpha: 0.5), for: .normal)
         
@@ -66,6 +66,5 @@ extension LoginViewController:LoginViewProtocol {
         DispatchQueue.main.async { [weak self] in
             isLoading ? self?.view.addSpinner() : self?.view.removeSpinner()
         }
-       
     }
 }

@@ -16,9 +16,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         let window = UIWindow(windowScene: windowScene)
-        let isUserLoggedIn = UserDefaults.standard.bool(forKey: "isUserLoggedIn")
+        let keepLogin = UserDefaults.standard.bool(forKey: Constants.keepLoginKey)
         
-        window.rootViewController =  LoginRouter.createLoginModule()
+        window.rootViewController = keepLogin ? LoginRouter.createLoginModule() : MovieHomeRouter.createMovieHomeModule()
  
         window.makeKeyAndVisible()
         
@@ -55,7 +55,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // to restore the scene back to its current state.
 
         // Save changes in the application's managed object context when the application transitions to the background.
-        (UIApplication.shared.delegate as? AppDelegate)?.saveContext()
     }
 
 

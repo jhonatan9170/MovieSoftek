@@ -11,11 +11,15 @@ class MovieHomeViewController: UIViewController {
 
     @IBOutlet weak var moviesTableView: UITableView!
     
+    var presenter: MovieHomePresenterProtocol?
+
+    var movies =  [MovieEntity]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupDelegates()
         setupViews()
+        presenter?.loadMovies()
     }
     
     func setupDelegates(){
@@ -34,9 +38,22 @@ class MovieHomeViewController: UIViewController {
     }
 }
 
+extension MovieHomeViewController: MovieHomeViewProtocol {
+    func showMovies(with movies: [MovieEntity]) {
+        self.movies = movies
+        DispatchQueue.main.async {[weak self] in 
+            self?.moviesTableView.reloadData()
+        }
+    }
+    func updateLoading(isLoading: Bool) {
+        DispatchQueue.main.async { [weak self] in
+            isLoading ? self?.view.addSpinner() : self?.view.removeSpinner()
+        }
+    }
+}
 extension MovieHomeViewController: UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return movies.count
     }
     
 
@@ -44,10 +61,16 @@ extension MovieHomeViewController: UITableViewDelegate,UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "MovieCellTableViewCell", for: indexPath) as? MovieCellTableViewCell else {
             return UITableViewCell()
         }
-        cell.configure(title: "Saw X", url: "https://image.tmdb.org/t/p/w500/aQPeznSu7XDTrrdCtT5eLiu52Yu.jpg")
+        let movie = movies[indexPath.row]
+        cell.configure(movie: movie)
         cell.backgroundColor = .clear
+        if indexPath.row == movies.count - 1 {
+            presenter?.loadMovies()
+        }
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let movie = movies[indexPath.row]
+        self.presenter?.showMovieSelection(with: movie)
     }
 }
