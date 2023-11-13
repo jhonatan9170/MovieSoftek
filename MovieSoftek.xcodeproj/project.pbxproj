@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0330117A2B01CF7E0032A746 /* APIClientTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033011792B01CF7E0032A746 /* APIClientTest.swift */; };
+		0330117C2B01CFB10032A746 /* MovieServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0330117B2B01CFB10032A746 /* MovieServiceTest.swift */; };
 		034C63AB2B005AF5004304D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034C63AA2B005AF5004304D9 /* AppDelegate.swift */; };
 		034C63AD2B005AF5004304D9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034C63AC2B005AF5004304D9 /* SceneDelegate.swift */; };
 		034C63AF2B005AF5004304D9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034C63AE2B005AF5004304D9 /* LoginViewController.swift */; };
@@ -40,6 +42,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		033011792B01CF7E0032A746 /* APIClientTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClientTest.swift; sourceTree = "<group>"; };
+		0330117B2B01CFB10032A746 /* MovieServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieServiceTest.swift; sourceTree = "<group>"; };
 		034C63A72B005AF5004304D9 /* MovieSoftek.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieSoftek.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		034C63AA2B005AF5004304D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		034C63AC2B005AF5004304D9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -50,8 +54,6 @@
 		034C63B92B005AF7004304D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		034C63BB2B005AF7004304D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		034C63C02B005AF7004304D9 /* MovieSoftekTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MovieSoftekTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		034C63CE2B005AF7004304D9 /* MovieSoftekUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieSoftekUITests.swift; sourceTree = "<group>"; };
-		034C63D02B005AF7004304D9 /* MovieSoftekUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieSoftekUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		03AA331D2B0094D300337AA6 /* MoviesService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviesService.swift; sourceTree = "<group>"; };
 		03AA331F2B0094EE00337AA6 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		03AA33212B00950200337AA6 /* MovieListResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieListResponse.swift; sourceTree = "<group>"; };
@@ -137,6 +139,8 @@
 		034C63C32B005AF7004304D9 /* MovieSoftekTests */ = {
 			isa = PBXGroup;
 			children = (
+				033011792B01CF7E0032A746 /* APIClientTest.swift */,
+				0330117B2B01CFB10032A746 /* MovieServiceTest.swift */,
 			);
 			path = MovieSoftekTests;
 			sourceTree = "<group>";
@@ -144,8 +148,6 @@
 		034C63CD2B005AF7004304D9 /* MovieSoftekUITests */ = {
 			isa = PBXGroup;
 			children = (
-				034C63CE2B005AF7004304D9 /* MovieSoftekUITests.swift */,
-				034C63D02B005AF7004304D9 /* MovieSoftekUITestsLaunchTests.swift */,
 			);
 			path = MovieSoftekUITests;
 			sourceTree = "<group>";
@@ -361,6 +363,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				03D2F3D82B0093EA00160628 /* (null) in Sources */,
+				0330117C2B01CFB10032A746 /* MovieServiceTest.swift in Sources */,
+				0330117A2B01CF7E0032A746 /* APIClientTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
