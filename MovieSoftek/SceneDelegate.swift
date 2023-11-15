@@ -18,7 +18,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let window = UIWindow(windowScene: windowScene)
         let keepLogin = UserDefaults.standard.bool(forKey: Constants.keepLoginKey)
         
-        window.rootViewController = keepLogin ? LoginRouter.createLoginModule() : MovieHomeRouter.createMovieHomeModule()
+        window.rootViewController = keepLogin ? MovieHomeRouter.createMovieHomeModule() : LoginRouter.createLoginModule()
         setNavBar()
         window.makeKeyAndVisible()
         
