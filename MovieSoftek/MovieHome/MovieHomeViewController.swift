@@ -9,51 +9,54 @@ import UIKit
 
 class MovieHomeViewController: UIViewController {
 
-    @IBOutlet weak var moviesTableView: UITableView!
+    @IBOutlet private weak var moviesTableView: UITableView! {
+        didSet{
+            moviesTableView.register(UINib(nibName: "MovieCellTableViewCell", bundle: nil), forCellReuseIdentifier: "MovieCellTableViewCell")
+            moviesTableView.backgroundColor = .clear
+            moviesTableView.contentInset = UIEdgeInsets(top: -36, left: 0, bottom: 0, right: 0)
+            moviesTableView.backgroundColor = .clear
+            moviesTableView.dataSource = self
+            moviesTableView.delegate = self
+        }
+    }
     
-    var presenter: MovieHomePresenterProtocol?
-
-    var movies =  [MovieEntity]()
+    private let presenter: MovieHomePresenterProtocol
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupDelegates()
-        setupViews()
-        presenter?.loadMovies()
+        setupView()
+        presenter.loadMovies()
     }
     
-    func setupDelegates(){
-        moviesTableView.dataSource = self
-        moviesTableView.delegate = self
-    }
-    
-    func setupViews() {
+    private func setupView() {
         self.title = "Upcoming Movies"
-        moviesTableView.register(UINib(nibName: "MovieCellTableViewCell", bundle: nil), forCellReuseIdentifier: "MovieCellTableViewCell")
-        moviesTableView.backgroundColor = .clear
-        moviesTableView.contentInset = UIEdgeInsets(top: -36, left: 0, bottom: 0, right: 0)
-        moviesTableView.backgroundColor = .clear
         navigationController?.navigationBar.tintColor = .white
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "")
     }
+    
+    init(presenter: MovieHomePresenterProtocol) {
+        self.presenter = presenter
+        super.init(nibName: "MovieHomeViewController", bundle: Bundle.main)
+        presenter.setViewProtocol(view: self)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
 }
 
 extension MovieHomeViewController: MovieHomeViewProtocol {
-    func showMovies(with movies: [MovieEntity]) {
-        self.movies = movies
-        DispatchQueue.main.async {[weak self] in 
-            self?.moviesTableView.reloadData()
-        }
+    func showMovies() {
+        moviesTableView.reloadData()
     }
     func updateLoading(isLoading: Bool) {
-        DispatchQueue.main.async { [weak self] in
-            isLoading ? self?.view.addSpinner() : self?.view.removeSpinner()
-        }
+        isLoading ? view.addSpinner() : view.removeSpinner()
     }
 }
 extension MovieHomeViewController: UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return movies.count
+        return presenter.movies.count
     }
     
 
@@ -61,16 +64,15 @@ extension MovieHomeViewController: UITableViewDelegate,UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "MovieCellTableViewCell", for: indexPath) as? MovieCellTableViewCell else {
             return UITableViewCell()
         }
-        let movie = movies[indexPath.row]
+        let movie = presenter.movieCellAtIndex(indexPath.row)
         cell.configure(movie: movie)
         cell.backgroundColor = .clear
-        if indexPath.row == movies.count - 1 {
-            presenter?.loadMovies()
+        if indexPath.row == presenter.movies.count - 1 {
+            presenter.loadMovies()
         }
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let movie = movies[indexPath.row]
-        self.presenter?.showMovieSelection(with: movie)
+        presenter.showMovieSelection(with: indexPath.row)
     }
 }

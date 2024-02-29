@@ -10,25 +10,22 @@ import XCTest
 
 final class MovieHomeInteractorTests: XCTestCase {
 
-    var interactor: MovieHomeInteractor!
+    var sut: MovieHomeInteractor!
     var mockMoviesService: MockMoviesService!
     var mockCoreDataManager: MockCoreDataManager!
     var mockPresenter: MockMovieHomePresenter!
 
     override func setUp() {
         super.setUp()
-        interactor = MovieHomeInteractor()
         mockMoviesService = MockMoviesService()
         mockCoreDataManager = MockCoreDataManager()
         mockPresenter = MockMovieHomePresenter()
-
-        interactor.moviesService = mockMoviesService
-        interactor.coreDataMananger = mockCoreDataManager
-        interactor.presenter = mockPresenter
+        sut = MovieHomeInteractor(moviesService: mockMoviesService, coreDataMananger: mockCoreDataManager)
+        sut.setPresenterProtocol(presenter: mockPresenter)
     }
 
     override func tearDown() {
-        interactor = nil
+        sut = nil
         mockMoviesService = nil
         mockCoreDataManager = nil
         mockPresenter = nil
@@ -40,7 +37,7 @@ final class MovieHomeInteractorTests: XCTestCase {
         mockMoviesService.mockResponse = mockResponse
         mockMoviesService.shouldReturnError = false
 
-        interactor.getMovieList(page: 1)
+        sut.getMovieList(page: 1)
 
         XCTAssertTrue(mockPresenter.moviesListDidFetchCalled)
     }
@@ -49,7 +46,7 @@ final class MovieHomeInteractorTests: XCTestCase {
         mockMoviesService.shouldReturnError = true
         mockCoreDataManager.mockMovies = [MovieEntity(id: 1, title: "Test", rating: "8/10", releaseDate: "", overview: "")]
 
-        interactor.getMovieList(page: 1)
+        sut.getMovieList(page: 1)
 
         XCTAssertTrue(mockPresenter.moviesListDidFetchFromStorageCalled)
     }
@@ -58,14 +55,14 @@ final class MovieHomeInteractorTests: XCTestCase {
         mockMoviesService.shouldReturnError = true
         mockCoreDataManager.mockMovies = []
 
-        interactor.getMovieList(page: 1)
+        sut.getMovieList(page: 1)
 
         XCTAssertTrue(mockPresenter.moviesListFailedCalled)
     }
 
     func testSaveDataToStorage() {
         let movies = [MovieEntity(id: 1, title: "Test", rating: "8/10", releaseDate: "", overview: "")]
-        interactor.saveDataToStorage(movies: movies)
+        sut.saveDataToStorage(movies: movies)
 
         XCTAssertTrue(mockCoreDataManager.saveMovieCalled)
     }

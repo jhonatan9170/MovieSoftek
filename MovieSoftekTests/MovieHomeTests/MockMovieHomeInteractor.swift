@@ -9,9 +9,6 @@ import Foundation
 @testable import MovieSoftek
 
 class MockMovieHomeInteractor: MovieHomeInputInteractorProtocol {
-    
-    var presenter: MovieHomeOutputInteractorProtocol?
-    
     var getMovieListCalled = false
     var saveDataToStorageCalled = false
 
@@ -23,4 +20,7 @@ class MockMovieHomeInteractor: MovieHomeInputInteractorProtocol {
         saveDataToStorageCalled = true
     }
     
+    func setPresenterProtocol(presenter: MovieSoftek.MovieHomeOutputInteractorProtocol) {
+        
+    }
 }

@@ -11,13 +11,15 @@ import Foundation
 class MockMovieHomeView: MovieHomeViewProtocol {
 
     var isLoadingUpdated = false
-    var moviesShown: [MovieEntity] = []
+    var isLoading = false
+    var showMoviesCalled = false
 
     func updateLoading(isLoading: Bool) {
-        isLoadingUpdated = isLoading
+        self.isLoadingUpdated = true
+        self.isLoading = isLoading
     }
 
-    func showMovies(with movies: [MovieEntity]) {
-        moviesShown.append(contentsOf: movies)
+    func showMovies() {
+       showMoviesCalled = true
     }
 }

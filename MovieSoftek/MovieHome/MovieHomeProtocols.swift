@@ -8,22 +8,21 @@
 import UIKit
 
 protocol MovieHomeViewProtocol: AnyObject {
-    func showMovies(with movies: [MovieEntity])
+    func showMovies()
     func updateLoading(isLoading:Bool)
 
 }
 
 protocol MovieHomePresenterProtocol: AnyObject {
-    var interactor: MovieHomeInputInteractorProtocol? {get set}
-    var view: MovieHomeViewProtocol? {get set}
-    var router: MovieHomeRouterProtocol? {get set}
-
+    var movies: [MovieEntity] {get set}
+    func setViewProtocol(view: MovieHomeViewProtocol)
     func loadMovies()
-    func showMovieSelection(with movie: MovieEntity)
+    func movieCellAtIndex(_ index : Int) -> MovieEntity
+    func showMovieSelection(with index: Int)
 }
 
 protocol MovieHomeInputInteractorProtocol: AnyObject {
-    var presenter: MovieHomeOutputInteractorProtocol? {get set}
+    func setPresenterProtocol(presenter: MovieHomeOutputInteractorProtocol)
     func getMovieList(page:Int)
     func saveDataToStorage(movies: [MovieEntity])
 }
@@ -35,9 +34,6 @@ protocol MovieHomeOutputInteractorProtocol: AnyObject {
 }
 
 protocol MovieHomeRouterProtocol: AnyObject {
-    var viewController: UIViewController? { get set }
-    static func createMovieHomeModule() -> UIViewController
-
     func goMovieDetail(with movie: MovieEntity)
     func showError(error: String)
 }

@@ -126,17 +126,6 @@ extension UIViewController {
     }
 }
 
-extension MovieResponse {
-    func toMovieEntity() -> MovieEntity {
-        return MovieEntity(id: self.id
-                           , title: self.title,
-                           rating: String(self.voteAverage)+"/10"
-                           , posterURL: URL(string: Constants.baseImageURL200 + self.posterPath),
-                           releaseDate: self.releaseDate.toLegibleDate(inputFormat: "yyyy-MM-dd") ?? self.releaseDate,
-                           overview: self.overview)
-    }
-}
-
 extension String {
     func toLegibleDate(inputFormat:String) -> String? {
         let inputFormatter = DateFormatter()
@@ -153,8 +142,6 @@ extension String {
         return outputFormatter.string(from: date)
     }
 }
-
-import Foundation
 
 protocol DispatchQueueType {
     func async(execute work: @escaping @convention(block) () -> Void)

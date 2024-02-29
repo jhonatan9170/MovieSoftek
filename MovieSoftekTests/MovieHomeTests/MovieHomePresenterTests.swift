@@ -1,83 +1,79 @@
-//
-//  MovieHomePresenterTests.swift
-//  MovieSoftekTests
-//
-//  Created by Jhonatan chavez chavez on 13/11/23.
-//
 
 import XCTest
 @testable import MovieSoftek
 
 final class MovieHomePresenterTests: XCTestCase {
 
-    var presenter: MovieHomePresenter!
+    var sut: MovieHomePresenter!
     var mockView: MockMovieHomeView!
     var mockRouter: MockMovieHomeRouter!
     var mockInteractor: MockMovieHomeInteractor!
+    var dispatchQueueMock:DispatchQueueType!
 
     override func setUp() {
         super.setUp()
-        presenter = MovieHomePresenter()
         mockView = MockMovieHomeView()
         mockRouter = MockMovieHomeRouter()
         mockInteractor = MockMovieHomeInteractor()
-
-        presenter.view = mockView
-        presenter.router = mockRouter
-        presenter.interactor = mockInteractor
+        dispatchQueueMock = DispatchQueueMock()
+        sut = MovieHomePresenter(router: mockRouter, interactor: mockInteractor, mainDispatchQueue: dispatchQueueMock)
+        sut.setViewProtocol(view: mockView)
     }
 
     override func tearDown() {
-        presenter = nil
+        sut = nil
         mockView = nil
         mockRouter = nil
         mockInteractor = nil
+        dispatchQueueMock = nil
         super.tearDown()
     }
 
     func testLoadMovies() {
         
-        presenter.totalPages = 10
-        presenter.page = 5
-        presenter.isFromStorage = false
+        sut.totalPages = 10
+        sut.page = 5
+        sut.isFromStorage = false
         
-        presenter.loadMovies()
+        sut.loadMovies()
         
         XCTAssertTrue(mockView.isLoadingUpdated)
         XCTAssertTrue(mockInteractor.getMovieListCalled)
     }
 
     func testShowMovieSelection() {
-        let movie = MovieEntity(id: 1, title: "Test Movie", rating: "8/10", releaseDate: "", overview: "")
-        presenter.showMovieSelection(with: movie)
+        let movie1 = MovieEntity(id: 1, title: "Test Movie", rating: "8/10", releaseDate: "", overview: "")
+        let movie2 = MovieEntity(id: 2, title: "Test Movie 2 ", rating: "9/10", releaseDate: "", overview: "")
+        sut.movies = [movie1,movie2]
+        sut.showMovieSelection(with: 0)
         XCTAssertTrue(mockRouter.movieDetailNavigationCalled)
-        XCTAssertEqual(mockRouter.movieDetailEntity, movie)
+        XCTAssertEqual(mockRouter.movieDetailEntity, movie1)
 
     }
     
     func testGetMoviesIsNotCalledWhenIsFromStorage(){
-        presenter.totalPages = 10
-        presenter.page = 15
-        presenter.isFromStorage = true
+        sut.totalPages = 10
+        sut.page = 15
+        sut.isFromStorage = true
         
-        presenter.loadMovies()
+        sut.loadMovies()
         
         XCTAssertFalse(mockInteractor.getMovieListCalled)
     }
     
     func testGetMoviesIsNotCalledWhenTotalPageIsMorethanCurrentPage(){
-        presenter.totalPages = 10
-        presenter.page = 15
+        sut.totalPages = 10
+        sut.page = 15
         
-        presenter.loadMovies()
+        sut.loadMovies()
         
         XCTAssertFalse(mockInteractor.getMovieListCalled)
     }
     
     func testGetMoviesIsCalledWhenTotalPageIsNil(){
-        presenter.totalPages = nil
+        sut.totalPages = nil
         
-        presenter.loadMovies()
+        sut.loadMovies()
         
         XCTAssertTrue(mockInteractor.getMovieListCalled)
     }
@@ -85,22 +81,28 @@ final class MovieHomePresenterTests: XCTestCase {
     
     func testMoviestListDidFetch() {
         let movieListResponse = MovieListResponse(page: 1, results: [], totalPages: 1)
-        presenter.moviestListDidFetch(moviesResponse: movieListResponse)
-        XCTAssertFalse(mockView.isLoadingUpdated)
-        XCTAssertEqual(presenter.movies.count, movieListResponse.results.count)
+        
+        sut.moviestListDidFetch(moviesResponse: movieListResponse)
+        
+        XCTAssertFalse(mockView.isLoading)
+        XCTAssertEqual(sut.movies.count, movieListResponse.results.count)
         XCTAssertTrue(mockInteractor.saveDataToStorageCalled)
     }
 
     func testMoviestListDidFetchFromStorage() {
         let movies = [MovieEntity(id: 1, title: "Test Movie", rating: "8/10", releaseDate: "", overview: "")]
-        presenter.moviestListDidFetchFromStorage(movies: movies)
-        XCTAssertTrue(presenter.isFromStorage)
-        XCTAssertEqual(mockView.moviesShown, movies)
+        
+        sut.moviestListDidFetchFromStorage(movies: movies)
+        
+        XCTAssertTrue(sut.isFromStorage)
+        XCTAssertTrue(mockView.showMoviesCalled)
     }
 
     func testMoviesListFailed() {
-        presenter.moviesListFailed(error: "Error")
-        XCTAssertFalse(mockView.isLoadingUpdated)
+        
+        sut.moviesListFailed(error: "Error")
+        
+        XCTAssertFalse(mockView.isLoading)
         XCTAssertEqual(mockRouter.errorShown, "Error")
     }
 }

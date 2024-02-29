@@ -9,13 +9,24 @@ import Foundation
 
 class MovieHomeInteractor: MovieHomeInputInteractorProtocol {
 
+    private var presenter: MovieHomeOutputInteractorProtocol?
+    private let moviesService: MoviesServiceProtocol
     
-    var presenter: MovieHomeOutputInteractorProtocol?
-    var moviesService: MoviesServiceProtocol = MoviesService()
+    private let coreDataMananger:CoreDataManagerProtocol
+
+    init(moviesService: MoviesServiceProtocol, coreDataMananger: CoreDataManagerProtocol) {
+        self.moviesService = moviesService
+        self.coreDataMananger = coreDataMananger
+    }
     
-    var coreDataMananger:CoreDataManagerProtocol = CoreDataManager.shared
-
-
+    convenience init() {
+        self.init(moviesService: MoviesService(), coreDataMananger: CoreDataManager.shared)
+    }
+    
+    func setPresenterProtocol(presenter: MovieHomeOutputInteractorProtocol) {
+        self.presenter = presenter
+    }
+    
     func getMovieList(page: Int) {
         moviesService.getUpcomingMovies(page: page) {[weak self] movies in
             guard let movies else {

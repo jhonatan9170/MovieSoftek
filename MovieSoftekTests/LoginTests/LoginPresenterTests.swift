@@ -30,6 +30,7 @@ class LoginPresenterTests: XCTestCase {
         viewMock = nil
         interactorMock = nil
         routerMock = nil
+        dispatchQueueMock = nil
         super.tearDown()
     }
 

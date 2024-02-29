@@ -13,13 +13,13 @@ class LoginViewController: UIViewController {
     
     private let presenter: LoginPresenterProtocol
     
-    @IBOutlet weak var loginButton: UIButton! {
+    @IBOutlet private weak var loginButton: UIButton! {
         didSet {
             loginButton.isEnabled = presenter.isTextFieldValid
         }
     }
     
-    @IBOutlet weak var emailTextField: MDCOutlinedTextField! {
+    @IBOutlet private weak var emailTextField: MDCOutlinedTextField! {
         didSet {
             emailTextField.label.font = UIFont(name: "helvetica neue", size: 16.0)
             emailTextField.label.text = "User"
@@ -28,7 +28,7 @@ class LoginViewController: UIViewController {
             emailTextField.addTarget(self, action: #selector(fieldsDidChange), for: .editingChanged)
         }
     }
-    @IBOutlet weak var passWordTextField: MDCOutlinedTextField! {
+    @IBOutlet private weak var passWordTextField: MDCOutlinedTextField! {
         didSet {
             passWordTextField.label.font = UIFont(name: "helvetica neue", size: 16.0)
             passWordTextField.label.text = "Contraseña"
@@ -38,7 +38,7 @@ class LoginViewController: UIViewController {
 
         }
     }
-    @IBOutlet weak var rememberCheckBox: Checkbox! {
+    @IBOutlet private weak var rememberCheckBox: Checkbox! {
         didSet {
             rememberCheckBox.checkedBorderColor = .purple
             rememberCheckBox.uncheckedBorderColor = .purple
@@ -61,7 +61,7 @@ class LoginViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    @objc func fieldsDidChange() {
+    @objc private func fieldsDidChange() {
         let username = emailTextField.text ?? ""
         let password = passWordTextField.text ?? ""
         let keepLogin = rememberCheckBox.isChecked
@@ -71,12 +71,12 @@ class LoginViewController: UIViewController {
         loginButton.isEnabled = presenter.isTextFieldValid
     }
     
-    @IBAction func showHidePasswordBtnTapped(_ sender: UIButton) {
+    @IBAction private func showHidePasswordBtnTapped(_ sender: UIButton) {
         passWordTextField.isSecureTextEntry.toggle()
         sender.setImage(UIImage(systemName: passWordTextField.isSecureTextEntry ? "eye.fill" : "eye.slash.fill"), for: .normal)
     }
     
-    @IBAction func ingresarBtnTapped(_ sender: UIButton) {
+    @IBAction private func ingresarBtnTapped(_ sender: UIButton) {
         presenter.login()
     }
 }
