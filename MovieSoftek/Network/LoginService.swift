@@ -14,7 +14,7 @@ protocol LoginServiceProtocol {
 class MockLoginService: LoginServiceProtocol {
     func login(username: String, password: String, completion: @escaping (Bool) -> Void) {
         DispatchQueue.global().asyncAfter(deadline: .now() + 1) {
-            let isSuccess = username == "admin" && password == "Password*123"
+            let isSuccess = username == "admin" && password == "12345678"
             completion(isSuccess)
         }
     }

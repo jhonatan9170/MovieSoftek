@@ -61,6 +61,8 @@
 		03D2F3D02B008D4900160628 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		03D2F3D82B0093EA00160628 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		22A13B618DC6D7BDBFB0A6BF /* Pods_MovieSoftekTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF098D79E11FD72BD1F5B4FC /* Pods_MovieSoftekTests.framework */; };
+		5A03D8F12B90D774003759B7 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A03D8EF2B90D774003759B7 /* LoginViewController.xib */; };
+		5A03D8F62B90F6C4003759B7 /* DispatchQueueMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A03D8F52B90F6C4003759B7 /* DispatchQueueMock.swift */; };
 		E4BAA44B538A050562A3CEAC /* Pods_MovieSoftek.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23C528F6E00D59A4430DE28D /* Pods_MovieSoftek.framework */; };
 /* End PBXBuildFile section */
 
@@ -132,6 +134,8 @@
 		184C9C67640ECBC552099BA4 /* Pods-MovieSoftekTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieSoftekTests.debug.xcconfig"; path = "Target Support Files/Pods-MovieSoftekTests/Pods-MovieSoftekTests.debug.xcconfig"; sourceTree = "<group>"; };
 		2102463C054E8653677A80F8 /* Pods-MovieSoftekTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieSoftekTests.release.xcconfig"; path = "Target Support Files/Pods-MovieSoftekTests/Pods-MovieSoftekTests.release.xcconfig"; sourceTree = "<group>"; };
 		23C528F6E00D59A4430DE28D /* Pods_MovieSoftek.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MovieSoftek.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A03D8EF2B90D774003759B7 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		5A03D8F52B90F6C4003759B7 /* DispatchQueueMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchQueueMock.swift; sourceTree = "<group>"; };
 		60C7E52EAE64068F56F2686D /* Pods-MovieSoftek.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieSoftek.debug.xcconfig"; path = "Target Support Files/Pods-MovieSoftek/Pods-MovieSoftek.debug.xcconfig"; sourceTree = "<group>"; };
 		A90480840F3CC400FA14A8B0 /* Pods-MovieSoftek.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieSoftek.release.xcconfig"; path = "Target Support Files/Pods-MovieSoftek/Pods-MovieSoftek.release.xcconfig"; sourceTree = "<group>"; };
 		CF098D79E11FD72BD1F5B4FC /* Pods_MovieSoftekTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MovieSoftekTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -176,6 +180,7 @@
 				033011832B01D5000032A746 /* LoginPresenter.swift */,
 				033011872B01E4B20032A746 /* LoginRouter.swift */,
 				033011852B01E3DD0032A746 /* LoginProtocols.swift */,
+				5A03D8EF2B90D774003759B7 /* LoginViewController.xib */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -202,6 +207,7 @@
 				0330119B2B02067C0032A746 /* MockLoginRoute.swift */,
 				033011892B0202140032A746 /* LoginInteractorTests.swift */,
 				033011952B02056E0032A746 /* LoginPresenterTests.swift */,
+				5A03D8F52B90F6C4003759B7 /* DispatchQueueMock.swift */,
 			);
 			path = LoginTests;
 			sourceTree = "<group>";
@@ -429,6 +435,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				034C63BA2B005AF7004304D9 /* LaunchScreen.storyboard in Resources */,
+				5A03D8F12B90D774003759B7 /* LoginViewController.xib in Resources */,
 				034C63B72B005AF7004304D9 /* Assets.xcassets in Resources */,
 				03D2F3C82B007ED900160628 /* MovieCellTableViewCell.xib in Resources */,
 				034C63B22B005AF5004304D9 /* MoviesStoryboard.storyboard in Resources */,
@@ -566,6 +573,7 @@
 				033011B02B026CDC0032A746 /* MockMovieHomePresenter.swift in Sources */,
 				033011B82B026DEF0032A746 /* MockMovieHomeRouter.swift in Sources */,
 				033011CA2B0282310032A746 /* MovieDetailPresenterTests.swift in Sources */,
+				5A03D8F62B90F6C4003759B7 /* DispatchQueueMock.swift in Sources */,
 				033011942B0204490032A746 /* MockLoginPresenter.swift in Sources */,
 				033011BA2B026E390032A746 /* MockMovieHomeView.swift in Sources */,
 				0330118D2B0202630032A746 /* MockAPIClient.swift in Sources */,

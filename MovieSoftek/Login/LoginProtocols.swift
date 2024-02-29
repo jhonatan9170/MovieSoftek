@@ -12,16 +12,15 @@ protocol LoginViewProtocol: AnyObject {
 }
 
 protocol LoginPresenterProtocol: AnyObject {
-    var view: LoginViewProtocol? {get set}
-    var interactor: LoginInputInteractorProtocol? {get set}
-    var router: LoginRouterProtocol? {get set}
-    
-    func login(username: String, password: String,keepLogin:Bool)
+    var isTextFieldValid: Bool {get}
+    func setViewProtocol(view: LoginViewProtocol)
+    func setData(username:String, password: String, keepLogin:Bool)
+    func login()
 
 }
 
 protocol LoginInputInteractorProtocol: AnyObject {
-    var presenter: LoginOutputInteractorProtocol? {get set}
+    func setPresenterProtocol(presenter: LoginOutputInteractorProtocol)
     func loginUser(username: String, password: String,keepLogin:Bool)
 }
 

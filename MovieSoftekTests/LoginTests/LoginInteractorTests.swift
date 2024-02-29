@@ -12,7 +12,7 @@ import XCTest
 
 final class LoginInteractorTests: XCTestCase {
 
-    var interactor: LoginInteractor!
+    var sut: LoginInteractor!
     var mockPresenter: MockLoginPresenter!
     var mockLoginService: MockLoginService!
 
@@ -20,13 +20,12 @@ final class LoginInteractorTests: XCTestCase {
         super.setUp()
         mockPresenter = MockLoginPresenter()
         mockLoginService = MockLoginService()
-        interactor = LoginInteractor()
-        interactor.presenter = mockPresenter
-        interactor.loginService = mockLoginService
+        sut = LoginInteractor(loginService: mockLoginService)
+        sut.setPresenterProtocol(presenter:mockPresenter)
     }
 
     override func tearDown() {
-        interactor = nil
+        sut = nil
         mockLoginService = nil
         mockPresenter = nil
         super.tearDown()
@@ -34,26 +33,14 @@ final class LoginInteractorTests: XCTestCase {
 
     func testLoginFailureInvalidCredentials() {
         mockLoginService.shouldReturnSuccess = false
-        interactor.loginUser(username: "test@example.com", password: "12345678", keepLogin: false)
+        sut.loginUser(username: "test@example.com", password: "12345678", keepLogin: false)
         XCTAssertTrue(mockPresenter.loginFailedCalled)
         XCTAssertEqual(mockPresenter.errorMessage, "Credenciales invalidas")
-    }
-
-    func testLoginFailureEmptyUsername() {
-        interactor.loginUser(username: "", password: "12345678", keepLogin: false)
-        XCTAssertTrue(mockPresenter.loginFailedCalled)
-        XCTAssertEqual(mockPresenter.errorMessage, "Correo inválido")
-    }
-
-    func testLoginFailureShortPassword() {
-        interactor.loginUser(username: "test@example.com", password: "123", keepLogin: false)
-        XCTAssertTrue(mockPresenter.loginFailedCalled)
-        XCTAssertEqual(mockPresenter.errorMessage, "Contraseña debe tener minimo 8 caracteres")
     }
     
     func testLoginSuccess() {
         mockLoginService.shouldReturnSuccess = true
-        interactor.loginUser(username: "test@example.com", password: "12345678", keepLogin: false)
+        sut.loginUser(username: "test@example.com", password: "12345678", keepLogin: false)
         XCTAssertTrue(mockPresenter.loginSuccessCalled)
     }
 

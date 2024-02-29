@@ -7,22 +7,20 @@
 
 import Foundation
 
-class LoginInteractor: LoginInputInteractorProtocol {    
-    var presenter: LoginOutputInteractorProtocol?
-    var loginService: LoginServiceProtocol = MockLoginService()
-
+class LoginInteractor: LoginInputInteractorProtocol {
+    
+    private var presenter: LoginOutputInteractorProtocol?
+    private let loginService: LoginServiceProtocol
+    
+    init( loginService: LoginServiceProtocol) {
+        self.loginService = loginService
+    }
+    
+    func setPresenterProtocol(presenter: LoginOutputInteractorProtocol) {
+        self.presenter = presenter
+    }
+    
     func loginUser(username: String, password: String, keepLogin:Bool) {
-        
-        guard !username.isEmpty else  {
-            presenter?.loginFailed(error: "Correo inválido")
-            return
-        }
-        
-        guard password.count > 7 else  {
-            presenter?.loginFailed(error: "Contraseña debe tener minimo 8 caracteres")
-            return
-        }
-
         loginService.login(username: username, password: password) { [weak self] isSuccess in
             if isSuccess {
                 UserDefaults.standard.set(keepLogin, forKey: Constants.keepLoginKey)
