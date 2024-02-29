@@ -8,15 +8,20 @@
 import UIKit
 
 class MovieDetailPresenter: MovietDetailPresenterProtocol {
+
+    private weak var view: MovieDetailViewProtocol?
+    private var router:MovieDetailRouterProtocol
+    private var _movie: MovieEntity
     
-    weak var view: MovieDetailViewProtocol?
-    var router:MovieDetailRouterProtocol?
-    var movie: MovieEntity?
+    var movie: MovieEntity {_movie}
     
-    func viewDidLoad() {
-        if let movie{
-            view?.showMovieDetail(with: movie)
-        }
-        
+    init(router: MovieDetailRouterProtocol, _movie: MovieEntity) {
+        self.router = router
+        self._movie = _movie
     }
+    
+    func setViewProtocol(view: MovieDetailViewProtocol) {
+        self.view = view
+    }
+    
 }

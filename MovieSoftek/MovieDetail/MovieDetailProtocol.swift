@@ -8,18 +8,14 @@
 import UIKit
 
 protocol MovietDetailPresenterProtocol: AnyObject {
-    
-    var router: MovieDetailRouterProtocol? {get set}
-    var view: MovieDetailViewProtocol? {get set}
-    
-    func viewDidLoad()
-    
+    var movie: MovieEntity { get }
+    func setViewProtocol(view: MovieDetailViewProtocol)
 }
 
 protocol MovieDetailViewProtocol: AnyObject {
-    func showMovieDetail(with movie: MovieEntity)
+
 }
 
 protocol MovieDetailRouterProtocol: AnyObject {
-    static func createMovieDetailModule(with movie: MovieEntity) -> UIViewController
+    
 }
