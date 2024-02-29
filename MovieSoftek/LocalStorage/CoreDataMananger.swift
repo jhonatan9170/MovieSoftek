@@ -71,9 +71,3 @@ class CoreDataManager:CoreDataManagerProtocol {
 
 }
 
-extension MovieData {
-    func toMovieEntity() -> MovieEntity{
-        return MovieEntity(id: Int(self.id), title: self.title ?? "", rating: self.rating ?? "" , releaseDate: self.releaseDate ?? "", overview: self.overview ?? "")
-    }
-}
-

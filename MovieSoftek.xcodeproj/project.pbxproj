@@ -284,19 +284,11 @@
 		034C63A92B005AF5004304D9 /* MovieSoftek */ = {
 			isa = PBXGroup;
 			children = (
+				5A03D8FE2B9110F2003759B7 /* App */,
 				0330117D2B01D0B50032A746 /* Network */,
-				0330117E2B01D0EA0032A746 /* Login */,
-				0330119F2B0208610032A746 /* MovieHome */,
-				033011BD2B0276380032A746 /* MovieDetail */,
-				034C63AA2B005AF5004304D9 /* AppDelegate.swift */,
-				034C63AC2B005AF5004304D9 /* SceneDelegate.swift */,
-				034C63B62B005AF7004304D9 /* Assets.xcassets */,
-				034C63B82B005AF7004304D9 /* LaunchScreen.storyboard */,
-				034C63BB2B005AF7004304D9 /* Info.plist */,
-				03AA331F2B0094EE00337AA6 /* Constants.swift */,
-				03D2F3CB2B0082C800160628 /* Extensions.swift */,
-				033011AC2B0220E60032A746 /* CoreDataMananger.swift */,
-				034C63B32B005AF5004304D9 /* MovieSoftek.xcdatamodeld */,
+				5A03D8FC2B9110D7003759B7 /* LocalStorage */,
+				5A03D8FB2B9110B7003759B7 /* Modules */,
+				5A03D8FD2B9110E9003759B7 /* Utilities */,
 			);
 			path = MovieSoftek;
 			sourceTree = "<group>";
@@ -327,6 +319,46 @@
 				2102463C054E8653677A80F8 /* Pods-MovieSoftekTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		5A03D8FB2B9110B7003759B7 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				033011BD2B0276380032A746 /* MovieDetail */,
+				0330119F2B0208610032A746 /* MovieHome */,
+				0330117E2B01D0EA0032A746 /* Login */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		5A03D8FC2B9110D7003759B7 /* LocalStorage */ = {
+			isa = PBXGroup;
+			children = (
+				033011AC2B0220E60032A746 /* CoreDataMananger.swift */,
+				034C63B32B005AF5004304D9 /* MovieSoftek.xcdatamodeld */,
+			);
+			path = LocalStorage;
+			sourceTree = "<group>";
+		};
+		5A03D8FD2B9110E9003759B7 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				03AA331F2B0094EE00337AA6 /* Constants.swift */,
+				034C63B62B005AF7004304D9 /* Assets.xcassets */,
+				03D2F3CB2B0082C800160628 /* Extensions.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		5A03D8FE2B9110F2003759B7 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				034C63AA2B005AF5004304D9 /* AppDelegate.swift */,
+				034C63B82B005AF7004304D9 /* LaunchScreen.storyboard */,
+				034C63AC2B005AF5004304D9 /* SceneDelegate.swift */,
+				034C63BB2B005AF7004304D9 /* Info.plist */,
+			);
+			path = App;
 			sourceTree = "<group>";
 		};
 		7AE3ABE82407429E480684D8 /* Frameworks */ = {
@@ -719,7 +751,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 7RRD9A765A;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = MovieSoftek/Info.plist;
+				INFOPLIST_FILE = MovieSoftek/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -747,7 +779,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 7RRD9A765A;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = MovieSoftek/Info.plist;
+				INFOPLIST_FILE = MovieSoftek/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
